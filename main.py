@@ -34,6 +34,11 @@ def main():
         for obj in updatable:
             obj.update(delta_time)
         #player.update(delta_time)
+
+        for obj in asteroids:
+            if player.collides(obj):
+                print("Game over!")
+                return
         
         screen.fill("black")
         for obj in drawable:
